@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qiita_app/ui/components/post/post_list_box.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -8,7 +9,19 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Qiita'),
       ),
-      body: Center(),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                PostListBox(),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
