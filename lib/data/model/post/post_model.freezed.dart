@@ -25,7 +25,7 @@ mixin _$PostModel {
   bool get coediting => throw _privateConstructorUsedError;
   int get comments_count => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
-  GroupModel get group => throw _privateConstructorUsedError;
+  GroupModel? get group => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   int get likes_count => throw _privateConstructorUsedError;
   bool get private => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$PostModel {
   String get updated_at => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   UserModel get user => throw _privateConstructorUsedError;
-  int get page_view_count => throw _privateConstructorUsedError;
+  int? get page_view_count => throw _privateConstructorUsedError;
   String get organization_url_name => throw _privateConstructorUsedError;
   bool get slide => throw _privateConstructorUsedError;
 
@@ -57,7 +57,7 @@ abstract class $PostModelCopyWith<$Res> {
       bool coediting,
       int comments_count,
       String created_at,
-      GroupModel group,
+      GroupModel? group,
       String id,
       int likes_count,
       bool private,
@@ -68,11 +68,11 @@ abstract class $PostModelCopyWith<$Res> {
       String updated_at,
       String url,
       UserModel user,
-      int page_view_count,
+      int? page_view_count,
       String organization_url_name,
       bool slide});
 
-  $GroupModelCopyWith<$Res> get group;
+  $GroupModelCopyWith<$Res>? get group;
   $UserModelCopyWith<$Res> get user;
 }
 
@@ -94,7 +94,7 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
     Object? coediting = null,
     Object? comments_count = null,
     Object? created_at = null,
-    Object? group = null,
+    Object? group = freezed,
     Object? id = null,
     Object? likes_count = null,
     Object? private = null,
@@ -105,7 +105,7 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
     Object? updated_at = null,
     Object? url = null,
     Object? user = null,
-    Object? page_view_count = null,
+    Object? page_view_count = freezed,
     Object? organization_url_name = null,
     Object? slide = null,
   }) {
@@ -130,10 +130,10 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as String,
-      group: null == group
+      group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
-              as GroupModel,
+              as GroupModel?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -174,10 +174,10 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserModel,
-      page_view_count: null == page_view_count
+      page_view_count: freezed == page_view_count
           ? _value.page_view_count
           : page_view_count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       organization_url_name: null == organization_url_name
           ? _value.organization_url_name
           : organization_url_name // ignore: cast_nullable_to_non_nullable
@@ -191,8 +191,12 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $GroupModelCopyWith<$Res> get group {
-    return $GroupModelCopyWith<$Res>(_value.group, (value) {
+  $GroupModelCopyWith<$Res>? get group {
+    if (_value.group == null) {
+      return null;
+    }
+
+    return $GroupModelCopyWith<$Res>(_value.group!, (value) {
       return _then(_value.copyWith(group: value) as $Val);
     });
   }
@@ -220,7 +224,7 @@ abstract class _$$PostModelImplCopyWith<$Res>
       bool coediting,
       int comments_count,
       String created_at,
-      GroupModel group,
+      GroupModel? group,
       String id,
       int likes_count,
       bool private,
@@ -231,12 +235,12 @@ abstract class _$$PostModelImplCopyWith<$Res>
       String updated_at,
       String url,
       UserModel user,
-      int page_view_count,
+      int? page_view_count,
       String organization_url_name,
       bool slide});
 
   @override
-  $GroupModelCopyWith<$Res> get group;
+  $GroupModelCopyWith<$Res>? get group;
   @override
   $UserModelCopyWith<$Res> get user;
 }
@@ -257,7 +261,7 @@ class __$$PostModelImplCopyWithImpl<$Res>
     Object? coediting = null,
     Object? comments_count = null,
     Object? created_at = null,
-    Object? group = null,
+    Object? group = freezed,
     Object? id = null,
     Object? likes_count = null,
     Object? private = null,
@@ -268,7 +272,7 @@ class __$$PostModelImplCopyWithImpl<$Res>
     Object? updated_at = null,
     Object? url = null,
     Object? user = null,
-    Object? page_view_count = null,
+    Object? page_view_count = freezed,
     Object? organization_url_name = null,
     Object? slide = null,
   }) {
@@ -293,10 +297,10 @@ class __$$PostModelImplCopyWithImpl<$Res>
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as String,
-      group: null == group
+      group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
-              as GroupModel,
+              as GroupModel?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -337,10 +341,10 @@ class __$$PostModelImplCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserModel,
-      page_view_count: null == page_view_count
+      page_view_count: freezed == page_view_count
           ? _value.page_view_count
           : page_view_count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       organization_url_name: null == organization_url_name
           ? _value.organization_url_name
           : organization_url_name // ignore: cast_nullable_to_non_nullable
@@ -362,7 +366,7 @@ class _$PostModelImpl implements _PostModel {
       required this.coediting,
       required this.comments_count,
       required this.created_at,
-      required this.group,
+      this.group,
       required this.id,
       required this.likes_count,
       required this.private,
@@ -373,7 +377,7 @@ class _$PostModelImpl implements _PostModel {
       required this.updated_at,
       required this.url,
       required this.user,
-      required this.page_view_count,
+      this.page_view_count,
       required this.organization_url_name,
       required this.slide})
       : _tags = tags;
@@ -392,7 +396,7 @@ class _$PostModelImpl implements _PostModel {
   @override
   final String created_at;
   @override
-  final GroupModel group;
+  final GroupModel? group;
   @override
   final String id;
   @override
@@ -420,7 +424,7 @@ class _$PostModelImpl implements _PostModel {
   @override
   final UserModel user;
   @override
-  final int page_view_count;
+  final int? page_view_count;
   @override
   final String organization_url_name;
   @override
@@ -513,7 +517,7 @@ abstract class _PostModel implements PostModel {
       required final bool coediting,
       required final int comments_count,
       required final String created_at,
-      required final GroupModel group,
+      final GroupModel? group,
       required final String id,
       required final int likes_count,
       required final bool private,
@@ -524,7 +528,7 @@ abstract class _PostModel implements PostModel {
       required final String updated_at,
       required final String url,
       required final UserModel user,
-      required final int page_view_count,
+      final int? page_view_count,
       required final String organization_url_name,
       required final bool slide}) = _$PostModelImpl;
 
@@ -542,7 +546,7 @@ abstract class _PostModel implements PostModel {
   @override
   String get created_at;
   @override
-  GroupModel get group;
+  GroupModel? get group;
   @override
   String get id;
   @override
@@ -564,7 +568,7 @@ abstract class _PostModel implements PostModel {
   @override
   UserModel get user;
   @override
-  int get page_view_count;
+  int? get page_view_count;
   @override
   String get organization_url_name;
   @override

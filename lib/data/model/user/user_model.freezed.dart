@@ -26,7 +26,7 @@ mixin _$UserModel {
   int get followers_count => throw _privateConstructorUsedError;
   String get github_login_name => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  int get item_count => throw _privateConstructorUsedError;
+  int? get item_count => throw _privateConstructorUsedError;
   String get linkedin_id => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -34,7 +34,7 @@ mixin _$UserModel {
   int get permanent_id => throw _privateConstructorUsedError;
   String get profile_image_url => throw _privateConstructorUsedError;
   bool get team_only => throw _privateConstructorUsedError;
-  String get twitter_screen_name => throw _privateConstructorUsedError;
+  String? get twitter_screen_name => throw _privateConstructorUsedError;
   String get website_url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -55,7 +55,7 @@ abstract class $UserModelCopyWith<$Res> {
       int followers_count,
       String github_login_name,
       String id,
-      int item_count,
+      int? item_count,
       String linkedin_id,
       String location,
       String name,
@@ -63,7 +63,7 @@ abstract class $UserModelCopyWith<$Res> {
       int permanent_id,
       String profile_image_url,
       bool team_only,
-      String twitter_screen_name,
+      String? twitter_screen_name,
       String website_url});
 }
 
@@ -86,7 +86,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? followers_count = null,
     Object? github_login_name = null,
     Object? id = null,
-    Object? item_count = null,
+    Object? item_count = freezed,
     Object? linkedin_id = null,
     Object? location = null,
     Object? name = null,
@@ -94,7 +94,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? permanent_id = null,
     Object? profile_image_url = null,
     Object? team_only = null,
-    Object? twitter_screen_name = null,
+    Object? twitter_screen_name = freezed,
     Object? website_url = null,
   }) {
     return _then(_value.copyWith(
@@ -122,10 +122,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      item_count: null == item_count
+      item_count: freezed == item_count
           ? _value.item_count
           : item_count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       linkedin_id: null == linkedin_id
           ? _value.linkedin_id
           : linkedin_id // ignore: cast_nullable_to_non_nullable
@@ -154,10 +154,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.team_only
           : team_only // ignore: cast_nullable_to_non_nullable
               as bool,
-      twitter_screen_name: null == twitter_screen_name
+      twitter_screen_name: freezed == twitter_screen_name
           ? _value.twitter_screen_name
           : twitter_screen_name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       website_url: null == website_url
           ? _value.website_url
           : website_url // ignore: cast_nullable_to_non_nullable
@@ -181,7 +181,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       int followers_count,
       String github_login_name,
       String id,
-      int item_count,
+      int? item_count,
       String linkedin_id,
       String location,
       String name,
@@ -189,7 +189,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       int permanent_id,
       String profile_image_url,
       bool team_only,
-      String twitter_screen_name,
+      String? twitter_screen_name,
       String website_url});
 }
 
@@ -210,7 +210,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? followers_count = null,
     Object? github_login_name = null,
     Object? id = null,
-    Object? item_count = null,
+    Object? item_count = freezed,
     Object? linkedin_id = null,
     Object? location = null,
     Object? name = null,
@@ -218,7 +218,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? permanent_id = null,
     Object? profile_image_url = null,
     Object? team_only = null,
-    Object? twitter_screen_name = null,
+    Object? twitter_screen_name = freezed,
     Object? website_url = null,
   }) {
     return _then(_$UserModelImpl(
@@ -246,10 +246,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      item_count: null == item_count
+      item_count: freezed == item_count
           ? _value.item_count
           : item_count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       linkedin_id: null == linkedin_id
           ? _value.linkedin_id
           : linkedin_id // ignore: cast_nullable_to_non_nullable
@@ -278,10 +278,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.team_only
           : team_only // ignore: cast_nullable_to_non_nullable
               as bool,
-      twitter_screen_name: null == twitter_screen_name
+      twitter_screen_name: freezed == twitter_screen_name
           ? _value.twitter_screen_name
           : twitter_screen_name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       website_url: null == website_url
           ? _value.website_url
           : website_url // ignore: cast_nullable_to_non_nullable
@@ -300,7 +300,7 @@ class _$UserModelImpl implements _UserModel {
       required this.followers_count,
       required this.github_login_name,
       required this.id,
-      required this.item_count,
+      this.item_count,
       required this.linkedin_id,
       required this.location,
       required this.name,
@@ -308,7 +308,7 @@ class _$UserModelImpl implements _UserModel {
       required this.permanent_id,
       required this.profile_image_url,
       required this.team_only,
-      required this.twitter_screen_name,
+      this.twitter_screen_name,
       required this.website_url});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -327,7 +327,7 @@ class _$UserModelImpl implements _UserModel {
   @override
   final String id;
   @override
-  final int item_count;
+  final int? item_count;
   @override
   final String linkedin_id;
   @override
@@ -343,7 +343,7 @@ class _$UserModelImpl implements _UserModel {
   @override
   final bool team_only;
   @override
-  final String twitter_screen_name;
+  final String? twitter_screen_name;
   @override
   final String website_url;
 
@@ -432,7 +432,7 @@ abstract class _UserModel implements UserModel {
       required final int followers_count,
       required final String github_login_name,
       required final String id,
-      required final int item_count,
+      final int? item_count,
       required final String linkedin_id,
       required final String location,
       required final String name,
@@ -440,7 +440,7 @@ abstract class _UserModel implements UserModel {
       required final int permanent_id,
       required final String profile_image_url,
       required final bool team_only,
-      required final String twitter_screen_name,
+      final String? twitter_screen_name,
       required final String website_url}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
@@ -459,7 +459,7 @@ abstract class _UserModel implements UserModel {
   @override
   String get id;
   @override
-  int get item_count;
+  int? get item_count;
   @override
   String get linkedin_id;
   @override
@@ -475,7 +475,7 @@ abstract class _UserModel implements UserModel {
   @override
   bool get team_only;
   @override
-  String get twitter_screen_name;
+  String? get twitter_screen_name;
   @override
   String get website_url;
   @override

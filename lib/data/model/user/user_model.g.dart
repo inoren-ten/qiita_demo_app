@@ -14,7 +14,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       followers_count: json['followers_count'] as int,
       github_login_name: json['github_login_name'] as String,
       id: json['id'] as String,
-      item_count: json['item_count'] as int,
+      item_count: json['item_count'] as int?,
       linkedin_id: json['linkedin_id'] as String,
       location: json['location'] as String,
       name: json['name'] as String,
@@ -22,7 +22,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       permanent_id: json['permanent_id'] as int,
       profile_image_url: json['profile_image_url'] as String,
       team_only: json['team_only'] as bool,
-      twitter_screen_name: json['twitter_screen_name'] as String,
+      twitter_screen_name: json['twitter_screen_name'] as String?,
       website_url: json['website_url'] as String,
     );
 

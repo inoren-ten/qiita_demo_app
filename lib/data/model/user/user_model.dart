@@ -12,7 +12,7 @@ class UserModel with _$UserModel {
     required int followers_count,
     required String github_login_name,
     required String id,
-    required int item_count,
+    int? item_count,
     required String linkedin_id,
     required String location,
     required String name,
@@ -20,7 +20,7 @@ class UserModel with _$UserModel {
     required int permanent_id,
     required String profile_image_url,
     required bool team_only,
-    required String twitter_screen_name,
+    String? twitter_screen_name,
     required String website_url,
   }) = _UserModel;
 

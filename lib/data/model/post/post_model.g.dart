@@ -13,7 +13,9 @@ _$PostModelImpl _$$PostModelImplFromJson(Map<String, dynamic> json) =>
       coediting: json['coediting'] as bool,
       comments_count: json['comments_count'] as int,
       created_at: json['created_at'] as String,
-      group: GroupModel.fromJson(json['group'] as Map<String, dynamic>),
+      group: json['group'] == null
+          ? null
+          : GroupModel.fromJson(json['group'] as Map<String, dynamic>),
       id: json['id'] as String,
       likes_count: json['likes_count'] as int,
       private: json['private'] as bool,
@@ -26,7 +28,7 @@ _$PostModelImpl _$$PostModelImplFromJson(Map<String, dynamic> json) =>
       updated_at: json['updated_at'] as String,
       url: json['url'] as String,
       user: UserModel.fromJson(json['user'] as Map<String, dynamic>),
-      page_view_count: json['page_view_count'] as int,
+      page_view_count: json['page_view_count'] as int?,
       organization_url_name: json['organization_url_name'] as String,
       slide: json['slide'] as bool,
     );
