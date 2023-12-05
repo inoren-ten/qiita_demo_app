@@ -14,7 +14,7 @@ class PostModel with _$PostModel {
     required bool coediting,
     required int comments_count,
     required String created_at,
-    required GroupModel group,
+    GroupModel? group,
     required String id,
     required int likes_count,
     required bool private,
@@ -25,7 +25,7 @@ class PostModel with _$PostModel {
     required String updated_at,
     required String url,
     required UserModel user,
-    required int page_view_count,
+    int? page_view_count,
     required String organization_url_name,
     required bool slide,
   }) = _PostModel;
