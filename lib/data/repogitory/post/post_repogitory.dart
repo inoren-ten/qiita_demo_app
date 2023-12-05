@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:qiita_app/constant/http.dart';
-import 'package:qiita_app/constant/token.dart';
 import 'package:qiita_app/data/model/post/post_model.dart';
 import 'package:http/http.dart' as http;
 

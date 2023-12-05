@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qiita_app/constant/example/example_data.dart';
 import 'package:qiita_app/constant/functions/return_time.dart';
 import 'package:qiita_app/ui/theme/colors.dart';
 
