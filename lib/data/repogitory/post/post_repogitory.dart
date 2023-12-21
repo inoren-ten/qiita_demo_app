@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:qiita_app/constant/http.dart';
 import 'package:qiita_app/data/model/post/post_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,8 +9,9 @@ Future<List<PostModel>> fetchPostData() async {
   final postDataList = <PostModel>[];
 
   // final response = await useHttp('users/KNR109');
-  final response =
-      await http.get(Uri.https('qiita.com', 'api/v2/users/tanaka-tt/items'));
+  // final response =
+  //     await http.get(Uri.https('qiita.com', 'api/v2/users/tanaka-tt/items'));
+  final response = await useHttp('api/v2/users/tanaka-tt/items');
 
   if (response.statusCode == 200) {
     if (response.body != null) {

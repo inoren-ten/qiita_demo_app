@@ -20,10 +20,10 @@ dependencies:
   riverpod_annotation: ^2.3.0
   flutter_hooks: ^0.20.3
   http: ^1.1.0
-  auto_route: ^7.8.4
   freezed_annotation: ^2.4.1
   json_serializable: ^6.7.1
   intl: ^0.18.1
+  auto_route: ^7.8.4
 
 dev_dependencies:
   flutter_test:

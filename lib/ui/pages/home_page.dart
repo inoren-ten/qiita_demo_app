@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qiita_app/data/model/post/post_model.dart';
@@ -5,7 +6,8 @@ import 'package:qiita_app/data/provider/post/post_provider.dart';
 import 'package:qiita_app/ui/components/post/post_list_box.dart';
 import 'package:qiita_app/ui/hooks/use_l10n.dart';
 
-class MyHomePage extends HookConsumerWidget {
+@RoutePage()
+class HomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<PostModel>> posts = ref.watch(postNotifierProvider);
@@ -22,7 +24,7 @@ class MyHomePage extends HookConsumerWidget {
           SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 posts.when(
                   data: (posts) {
                     return Column(
@@ -31,11 +33,7 @@ class MyHomePage extends HookConsumerWidget {
                           Column(
                             children: [
                               PostListBox(
-                                createdAt: post.created_at,
-                                title: post.title,
-                                userImage: post.user.profile_image_url,
-                                userName: post.user.name,
-                                likesCount: post.likes_count,
+                                postData: post,
                               ),
                               const SizedBox(height: 10),
                             ],
